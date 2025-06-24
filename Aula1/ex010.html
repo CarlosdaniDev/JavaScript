@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h
+    <div id="res">
+
+    </div>
+
+    <input type="button" value="Verificar" onclick="calcular()">
+    <script>
+       function calcular(){
+        var txtv = document.getElementById('txtvel')
+        var vel = Number(txtv.value)
+        var res = document.getElementById('res')
+        res.innerHTML = (`<p>Sua velocidade atual é de ${vel} km/h</p>`)
+        res.innerHTML += (`<p>A média permitida é de 60km/h</p>`)
+        if (vel > 60) {
+            res.innerHTML += (`<p>Sua velocidade está acima da média! MULTADO!</p>`)
+           
+    }
+}
+    </script>
+</body>
+</html>
